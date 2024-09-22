@@ -1,0 +1,109 @@
+body {
+    background-color: #121212;
+    color: #E0E0E0;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.chat-container {
+    width: 400px;
+    background-color: #1F1B24;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+.chat-box {
+    background-color: #292D3E;
+    color: #FFFFFF;
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+.chat-input {
+    width: calc(100% - 90px);
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    margin-right: 10px;
+    background-color: #121212;
+    color: #E0E0E0;
+    font-size: 16px;
+}
+.chat-button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #BB86FC;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+.chat-button:hover {
+    background-color: #A56EFF;
+}
+.chat-button:active {
+    transform: scale(0.95);
+}
+.chat-bubble {
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s forwards;
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.user-bubble {
+    background-color: #BB86FC;
+    text-align: right;
+}
+.bot-bubble {
+    background-color: #292D3E;
+    text-align: left;
+}
+.typing-indicator {
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+}
+.typing-indicator span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #BB86FC;
+    margin: 0 2px;
+    opacity: 0.4;
+    animation: typing 1s infinite;
+}
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+@keyframes typing {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+.chat-input::placeholder {
+    color: #6c6c6c;
+    animation: blink 1s infinite;
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}

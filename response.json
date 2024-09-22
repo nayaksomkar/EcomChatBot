@@ -1,0 +1,84 @@
+{
+    "intents": [
+        {
+            "tag": "greetings",
+            "patterns": ["Hello", "Hi", "How are you?", "Hey", "Good morning", "Good evening"],
+            "responses": ["Hello!", "Hi there!", "Hey! How can I assist you today?", "Good day! How can I help you?"]
+        },
+        {
+            "tag": "payment_methods",
+            "patterns": ["What payment methods do you accept?", "How can I pay?", "Do you accept credit cards?", "Is PayPal available?", "Can I pay using bank transfer?", "What are the available payment methods?", "What are the payment options?", "Payment options available?"],
+            "responses": ["We accept credit/debit cards, PayPal, UPI and bank transfers.", "You can pay via Visa, MasterCard, PayPal, UPI or direct bank transfer."]
+        },
+        {
+            "tag": "payment_security",
+            "patterns": ["Is your payment process secure?", "How secure is my payment?", "Are my payment details safe?", "Is your payment gateway secure?"],
+            "responses": ["Your payment is 100% secure through our encrypted payment gateway.", "We use industry-standard encryption to protect your payment details.", "Your information is securely processed and safeguarded."]
+        },
+        {
+            "tag": "shipping_time",
+            "patterns": ["When will my order be shipped?", "How long does shipping take?", "What is the estimated delivery time?", "How fast will I get my package?", "When can I expect my order?"],
+            "responses": ["Orders are shipped within 3-4 business days.", "The estimated delivery time is provided once your order is shipped."]
+        },
+        {
+            "tag": "international_shipping",
+            "patterns": ["Do you ship internationally?", "Can I order from outside the country?", "Is international shipping available?", "Can you ship to my country?", "Do you deliver globally?"],
+            "responses": ["Yes, we ship internationally!", "We deliver to most countries worldwide.", "International shipping is available for all products."]
+        },
+        {
+            "tag": "tracking_order",
+            "patterns": ["Can I track my order?", "How do I track my shipment?", "Where can I track my package?", "How do I check my order status?"],
+            "responses": ["You can track your shipment using the tracking number sent to your Email and Phone Number.", "Track your order via the tracking page on our website.", "We'll send a tracking link once your order is shipped."]
+        },
+        {
+            "tag": "shipping_cost",
+            "patterns": ["How much does shipping cost?", "What are the shipping charges?", "Is shipping free?", "Do you charge for shipping?", "How much for international shipping?"],
+            "responses": ["Shipping charges vary based on your location and the weight of the package."]
+        },
+        {
+            "tag": "return_policy",
+            "patterns": ["What is your return policy?", "Can I return an item?", "How do I return a product?", "What are the return conditions?", "How long do I have to return a product?"],
+            "responses": ["You can return items within 30 days of receiving your order.", "To initiate a return, visit our returns page or contact support.", "Products must be in original condition for a return."]
+        },
+        {
+            "tag": "refunds",
+            "patterns": ["How do I get a refund?", "Can I get a refund?", "What is your refund process?", "When will I receive my refund?", "How long does a refund take?"],
+            "responses": ["Refunds are processed within 5-7 business days after we receive the returned product.", "Once the returned item is approved, your refund will be initiated."]
+        },
+        {
+            "tag": "exchange_policy",
+            "patterns": ["Can I exchange an item?", "How do I exchange my product?", "Do you offer exchanges?", "What is your exchange policy?", "Can I swap my order?"],
+            "responses": ["You can exchange items within 30 days of delivery.", "To exchange a product, visit our exchange portal or contact support."]
+        },
+        {
+            "tag": "damaged_product",
+            "patterns": ["My product arrived damaged.", "The product I received is broken.", "What do I do with a defective item?", "I got a damaged product.", "How can I report a broken product?"],
+            "responses": ["We're sorry to hear that! Please provide photos of the damaged product, and we’ll arrange a replacement.", "You can file a complaint for damaged items on our support page."]
+        },
+        {
+            "tag": "wrong_item",
+            "patterns": ["I received the wrong item.", "This is not what I ordered.", "My order is incorrect.", "You sent the wrong product.", "How can I get the right product?"],
+            "responses": ["We apologize for the mistake. Please contact our support team with your order details, and we’ll resolve the issue.", "You can return the wrong item and we’ll send you the correct one."]
+        },
+        {
+            "tag": "customer_support",
+            "patterns": ["How can I contact support?", "What is your customer service number?", "How do I reach customer support?", "Can I talk to customer service?", "Do you have a help center?"],
+            "responses": ["You can reach our customer support team via email at support@example.com or call us at 1-800-123-4567.", "Our support team is available 24/7 to assist you."]
+        },
+        {
+            "tag": "payment_issues",
+            "patterns": ["My payment didn’t go through.", "I’m having trouble with my payment.", "Why was my payment declined?", "I can't make a payment.", "My transaction failed."],
+            "responses": ["Please ensure your payment details are correct and try again.", "If you're still having issues, contact our support team.", "Payment failures can occur due to incorrect information or insufficient funds."]
+        },
+        {
+            "tag": "order_modification",
+            "patterns": ["Can I change my order?", "How do I modify my order?", "I need to change my shipping address.", "Can I update my order details?", "Is it possible to cancel or modify my order?"],
+            "responses": ["You can modify your order within 24 hours of placing it by contacting customer support.", "To change your shipping address or update your order, visit your order page or reach out to us directly."]
+        },
+        {
+            "tag": "general_queries",
+            "patterns": ["Do you offer gift cards?", "Where is your company located?", "Do you have physical stores?", "What are your business hours?", "Can I purchase a gift card?"],
+            "responses": ["Yes, we offer gift cards in various denominations.", "Our company is based in New Delhi, India, and we operate Monday to Friday from 9 AM to 6 PM.", "You can purchase gift cards on our website."]
+        }
+    ]
+}
