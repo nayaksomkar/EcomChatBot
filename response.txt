@@ -73,3 +73,18 @@ Corrected Query: payment options?
 Response: You can pay via Visa, MasterCard, PayPal, UPI or direct bank transfer.
 Confidence: 1.00
 ----------------------------------------
+User Query: what are the payment options ?
+Corrected Query: what are the payment options ?
+Response: You can pay via Visa, MasterCard, PayPal, UPI or direct bank transfer.
+Confidence: 1.00
+----------------------------------------
+User Query: How many days it takes for shipping?
+Corrected Query: How many days it takes for shipping?
+Response: Shipping charges vary based on your location and the weight of the package.
+Confidence: 0.98
+----------------------------------------
+User Query: Cost of the shipping?
+Corrected Query: Cost of the shipping?
+Response: Shipping charges vary based on your location and the weight of the package.
+Confidence: 1.00
+----------------------------------------
