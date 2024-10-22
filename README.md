@@ -1,38 +1,55 @@
 # EcomChatBot
 
-A chatbot built with Natural Language Processing (NLP) techniques, integrated within a Flask API. This chatbot leverages deep learning and various NLP libraries to provide features like multilingual input handling, spell correction, intent classification, and context-aware responses.
+An intelligent e-commerce chatbot built with Natural Language Processing (NLP) techniques, integrated within a Flask API. This chatbot leverages deep learning and various NLP libraries to provide natural, context-aware customer interactions.
 
-[Watch the working of the project](https://raw.githubusercontent.com/nayaksomkar/EcomChatBot/main/EcomChatBot.mov)
+[EcomChatBot Demo](https://raw.githubusercontent.com/nayaksomkar/EcomChatBot/main/EcomChatBot.mov)
 
 ## Features
 
-- **Multilingual Input Handling**: Uses Google Translate to handle input in multiple languages.
-- **Spell Correction**: Automatically corrects spelling mistakes using the `autocorrect` library.
-- **Intent Classification**: Uses a trained neural network model for identifying user intents.
-- **Context-Aware Responses**: Maintains context across interactions for more natural conversations.
-- **Deep Learning Model**: Utilizes Keras with TensorFlow backend for training the intent classification model.
+- **Multilingual Support**: Handles customer queries in multiple languages using Google Translate integration
+- **Intelligent Spell Correction**: Automatically fixes typos and spelling mistakes using the `autocorrect` library
+- **Advanced Intent Classification**: Uses deep learning to accurately identify customer intents
+- **Context-Aware Conversations**: Maintains conversation context for more natural interactions
+- **Neural Network Backend**: Powered by Keras with TensorFlow for robust intent classification
 
-## Getting Started
+## Prerequisites
 
-### Prerequisites
+- Python 3.7+
+- pip package manager
 
-Ensure you have the following installed:
+## Installation
 
-- Python 3.7 or above
-- `pip` for managing Python packages
-
-### Installation
-
-1. **Clone the repository:**
+1. Clone the repository:
    ```bash
    git clone https://github.com/nayaksomkar/EcomChatBot
    cd EcomChatBot
+   ```
 
-### Installing Dependencies
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-To install all the required dependencies from the `requirements.txt` file, run the following command:
+## Setup and Running
 
-```bash
-pip install -r requirements.txt
+1. **Train the Model** (if not already trained):
+   - Run `responseEngine.py` to train the model on your data
+   - This will generate required binary files and the model file (`responseEngine.h5`)
+   - Training uses the `response.json` file for intent data
 
+2. **Start the Backend**:
+   - Run `backend.py` to start the test server
+   - This establishes the connection between frontend and backend
+
+3. **Launch the Frontend**:
+   - Open `index.html` in a web browser
+   - The chatbot interface will connect to the backend server
+   - Start interacting with the chatbot!
+
+## Model Training
+
+The chatbot uses a neural network model for intent classification. If you want to train it on new data:
+1. Update the `response.json` file with your custom intents and responses
+2. Run `responseEngine.py` to generate a new model
+3. The new model will be saved as `responseEngine.h5`
 
