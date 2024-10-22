@@ -2,6 +2,8 @@
 
 A chatbot built with Natural Language Processing (NLP) techniques, integrated within a Flask API. This chatbot leverages deep learning and various NLP libraries to provide features like multilingual input handling, spell correction, intent classification, and context-aware responses.
 
+[Watch the working of the project](https://github.com/nayaksomkar/EcomChatBot/blob/main/EcomChatBot.mov)
+
 ## Features
 
 - **Multilingual Input Handling**: Uses Google Translate to handle input in multiple languages.
@@ -32,3 +34,5 @@ To install all the required dependencies from the `requirements.txt` file, run t
 
 ```bash
 pip install -r requirements.txt
+
+
