@@ -25,3 +25,10 @@ Ensure you have the following installed:
    ```bash
    git clone https://github.com/nayaksomkar/EcomChatBot
    cd EcomChatBot
+
+### Installing Dependencies
+
+To install all the required dependencies from the `requirements.txt` file, run the following command:
+
+```bash
+pip install -r requirements.txt
