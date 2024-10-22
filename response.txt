@@ -113,3 +113,13 @@ Corrected Query: Payment options?
 Response: We accept credit/debit cards, PayPal, UPI and bank transfers.
 Confidence: 1.00
 ----------------------------------------
+User Query: hello
+Corrected Query: hello
+Response: Good day! How can I help you?
+Confidence: 1.00
+----------------------------------------
+User Query: what kind of payment services do you accept??
+Corrected Query: what kind of payment services do you accept??
+Response: You can pay via Visa, MasterCard, PayPal, UPI or direct bank transfer.
+Confidence: 1.00
+----------------------------------------
