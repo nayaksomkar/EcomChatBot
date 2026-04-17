@@ -58,9 +58,6 @@ env/
 # *.h5
 # *.hdf5
 
-# Runtime generated files
-response.txt
-*.mov
 
 # OS
 .DS_Store
