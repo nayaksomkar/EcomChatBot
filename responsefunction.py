@@ -1,3 +1,9 @@
+"""
+NLP processing utilities for EcomChatBot.
+Provides functions for text preprocessing, translation, spell correction,
+and response generation.
+"""
+
 import nltk
 import numpy as np
 import json
@@ -7,28 +13,61 @@ from autocorrect import Speller
 from googletrans import Translator
 from nltk.stem import WordNetLemmatizer
 
-lemmatizer = WordNetLemmatizer() # Initialize the lemmatizer
-translator = Translator() # Initialize the translator
-spell = Speller() # Initialize spell checker
+# Initialize NLP components
+lemmatizer = WordNetLemmatizer()
+translator = Translator()
+spell = Speller()
 
-with open('response.json') as file: # Load intents from the JSON file
+# Load intent definitions from JSON
+with open('response.json') as file:
     intents = json.load(file)
 
+
 def standardQuery(query):
-    # Translate the input text to English (US)
+    """
+    Translate input text to English.
+    
+    Args:
+        query: The input string in any language.
+        
+    Returns:
+        str: The translated English text.
+    """
     translation = translator.translate(query, dest='en', src='auto')
     return translation.text
 
+
 def processedQuery(query):
-    corrected_sentence = spell(query)  # Correct spelling errors
+    """
+    Apply spell correction to the input query.
+    
+    Args:
+        query: The input string to correct.
+        
+    Returns:
+        str: The spell-corrected string.
+    """
+    corrected_sentence = spell(query)
     print(f"Corrected Sentence: {corrected_sentence}")
     return corrected_sentence
 
+
 def bow(sentence, words, show_details=False):
-    sentence_words = nltk.word_tokenize(sentence) # Tokenize and lemmatize the sentence
+    """
+    Convert a sentence to a bag-of-words vector.
+    
+    Args:
+        sentence: The input sentence to tokenize.
+        words: The vocabulary list.
+        show_details: Whether to print debug information.
+        
+    Returns:
+        numpy.ndarray: Binary vector representing word presence.
+    """
+    sentence_words = nltk.word_tokenize(sentence)
     sentence_words = [lemmatizer.lemmatize(word.lower()) for word in sentence_words]
 
-    bag = [0] * len(words)  # Create the bag of words array
+    bag = [0] * len(words)
     for s in sentence_words:
         for i, w in enumerate(words):
             if w == s:
@@ -40,7 +79,18 @@ def bow(sentence, words, show_details=False):
     
     return np.array(bag)
 
+
 def generate_response(tag, confidence):
+    """
+    Generate a response based on the predicted intent tag.
+    
+    Args:
+        tag: The predicted intent label.
+        confidence: The model's confidence score.
+        
+    Returns:
+        str: A response string from the matching intent.
+    """
     print(f"Generating response for tag: {tag}")
     for intent in intents['intents']:
         if intent['tag'] == tag:

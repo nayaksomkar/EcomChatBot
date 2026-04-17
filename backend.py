@@ -1,3 +1,8 @@
+"""
+Flask backend server for the EcomChatBot application.
+Handles API requests and integrates with the trained NLP model.
+"""
+
 import pickle
 
 from flask import Flask, request, jsonify
@@ -5,15 +10,26 @@ from flask_cors import CORS
 from tensorflow.python.keras.models import load_model
 from responsefunction import *
 
+# Initialize Flask application
 app = Flask(__name__)
-CORS(app)  # Allow cross-origin requests
+CORS(app)
 
-# Load the words and classes
+# Load the trained model and associated data files
 words = pickle.load(open('words.pkl', 'rb'))
 classes = pickle.load(open('classes.pkl', 'rb'))
-model = load_model('responseEngine.h5') # Load the trained model
+model = load_model('responseEngine.h5')
 
-def predict_class(sentence): # Predict the class of the sentence
+
+def predict_class(sentence):
+    """
+    Predict the intent class of a user query.
+    
+    Args:
+        sentence: The input query string.
+        
+    Returns:
+        tuple: Predicted class label and confidence score.
+    """
     bow_sentence = bow(sentence, words, show_details=True)
     prediction = model.predict(np.array([bow_sentence]))[0]
     max_index = np.argmax(prediction)
@@ -25,7 +41,17 @@ def predict_class(sentence): # Predict the class of the sentence
     
     return predicted_class, confidence
 
+
 def process_query(query):
+    """
+    Process a user query through the complete NLP pipeline.
+    
+    Args:
+        query: The raw user input string.
+        
+    Returns:
+        str: The generated response from the chatbot.
+    """
     print(f"Processing query: {query}")
     corrected_query = processedQuery(standardQuery(query))
     intent, confidence = predict_class(corrected_query)
@@ -41,16 +67,24 @@ def process_query(query):
         
     return response
 
+
 @app.route('/chat', methods=['POST'])
 def chat():
-    user_query = request.json.get('message')  # Get the message from the request
-    print(f"User query: {user_query}")  # Print the user query on the server-side
+    """
+    API endpoint for chat interactions.
+    
+    Expects a JSON body with a 'message' field.
+    Returns a JSON response with the chatbot's reply.
+    """
+    user_query = request.json.get('message')
+    print(f"User query: {user_query}")
    
-    response = process_query(user_query)  # Process the query and generate a response
+    response = process_query(user_query)
     return jsonify({"response": response})
 
+
 if __name__ == '__main__':
-    print("Loaded words:", words[:10], "...")  # Print first 10 words
+    print("Loaded words:", words[:10], "...")
     print("Loaded classes:", classes)
     print("Number of intents:", len(intents['intents']))
     app.run(debug=True)
